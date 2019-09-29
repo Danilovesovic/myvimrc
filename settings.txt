@@ -1,0 +1,14 @@
+  set relativenumber
+   call plug#begin()
+   Plug 'mattn/emmet-vim'
+   Plug 'https://github.com/rafi/awesome-vim-colorschemes'
+   Plug 'https://github.com/tyrannicaltoucan/vim-deep-space'
+   Plug 'https://github.com/jiangmiao/auto-pairs'
+   Plug 'https://github.com/kien/ctrlp.vim'
+   Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+   Plug 'https://github.com/wesQ3/vim-windowswap'
+   call plug#end()
+  set background=dark
+  set termguicolors
+  let g:prettier#exec_cmd_path = "~/.vim/plugged/vim-prettier/node_mod    ules/.bin/prettier"
+  colorscheme deep-space
