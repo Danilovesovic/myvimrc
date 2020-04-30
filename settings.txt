@@ -22,6 +22,7 @@
  vmap cll yocll<Esc>p
  " Console log from normal mode, inserted on next line with word your on inside parentheses
  nmap cll yiwocll<Esc>p
+ let g:user_emmet_leader_key='<C-Z>'
 
   
   
