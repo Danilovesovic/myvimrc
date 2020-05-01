@@ -1,28 +1,56 @@
 
-  
-  set relativenumber
+ set relativenumber
   call plug#begin()
   Plug 'mattn/emmet-vim'
- Plug 'https://github.com/rafi/awesome-vim-colorschemes'
+  Plug 'https://github.com/rafi/awesome-vim-colorschemes'
   Plug 'https://github.com/tyrannicaltoucan/vim-deep-space'
   Plug 'https://github.com/jiangmiao/auto-pairs'
   Plug 'https://github.com/kien/ctrlp.vim'
+  Plug 'preservim/nerdcommenter'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'itchyny/lightline.vim'
   Plug 'prettier/vim-prettier', { 'do': 'npm install' }
   Plug 'https://github.com/wesQ3/vim-windowswap'
   Plug 'scrooloose/nerdcommenter'
+  Plug 'chuling/vim-equinusocio-material'
+  Plug 'preservim/nerdtree'
  "" Plug 'https://github.com/scrooloose/nerdtree'
  call plug#end()
- set background=dark
+ 
+ " make vertsplit invisible
+ let g:equinusocio_material_hide_vertsplit = 1
  set termguicolors
+ colorscheme equinusocio_material
+ 
+ map <C-k> :NERDTreeToggle<CR>
+ let g:NERDTreeDirArrowExpandable = '▸'
+ let g:NERDTreeDirArrowCollapsible = '▾'
+ "autocmd vimenter * NERDTree
+ 
  let g:prettier#exec_cmd_path = "~/.vim/plugged/vim-prettier/node_mod    ules/.bin/prettier"
- colorscheme default
+ 
  " Console log from insert mode; Puts focus inside parentheses
  imap cll console.log();<Esc>==f(a
  " Console log from visual mode on next line, puts visual selection inside parentheses
  vmap cll yocll<Esc>p
  " Console log from normal mode, inserted on next line with word your on inside parentheses
  nmap cll yiwocll<Esc>p
+ " set background=dark
+ nmap cll yiwocll<Esc>p
+
  let g:user_emmet_leader_key='<C-Z>'
+
+ " Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|vendor\|node_modules\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
+" remove status line
+ "  set noshowmode
+ " set noruler
+ "set laststatus=1
+ "set noshowcmd
+ "set cmdheight=1
 
   
   
