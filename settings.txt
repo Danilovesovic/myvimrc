@@ -1,11 +1,16 @@
 
+ 
  set relativenumber
+ set hlsearch
   call plug#begin()
   Plug 'mattn/emmet-vim'
   Plug 'https://github.com/rafi/awesome-vim-colorschemes'
   Plug 'https://github.com/tyrannicaltoucan/vim-deep-space'
   Plug 'https://github.com/jiangmiao/auto-pairs'
   Plug 'https://github.com/kien/ctrlp.vim'
+  "Plug 'SirVer/ultisnips'
+  Plug 'tpope/vim-fugitive'
+  Plug 'mileszs/ack.vim'
   Plug 'preservim/nerdcommenter'
   Plug 'airblade/vim-gitgutter'
   Plug 'itchyny/lightline.vim'
@@ -38,7 +43,8 @@
  " set background=dark
  nmap cll yiwocll<Esc>p
 
- let g:user_emmet_leader_key='<C-Z>'
+ "imap ii <Esc>
+ let g:user_emmet_leader_key='<Ctrl>'
 
  " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
@@ -51,6 +57,10 @@ let g:ctrlp_custom_ignore = {
  "set laststatus=1
  "set noshowcmd
  "set cmdheight=1
+ "
+ "
+ nnoremap <Leader><space> :noh<cr>
+
 
   
   
