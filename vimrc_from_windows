@@ -1,3 +1,4 @@
+set backspace=indent,eol,start
 syntax on
 set hidden
 set noerrorbells
@@ -29,6 +30,7 @@ let g:UltiSnipsUsePythonVersion = 3
   Plug 'mattn/emmet-vim'
   Plug 'https://github.com/rafi/awesome-vim-colorschemes'
   Plug 'MarcWeber/vim-addon-mw-utils'
+  Plug 'shawncplus/phpcomplete.vim'
   Plug 'tomtom/tlib_vim'
   Plug 'garbas/vim-snipmate'
 
@@ -56,15 +58,15 @@ let g:UltiSnipsUsePythonVersion = 3
  let g:equinusocio_material_hide_vertsplit = 1
  set termguicolors
  colorscheme equinusocio_material
- colorscheme gruvbox
+" colorscheme gruvbox
  let g:floaterm_keymap_new    = '<Home>'
   let g:floaterm_keymap_kill   = '<End>'
   hi FloatermBorder guibg=orange guifg=cyan
 
 
  map <C-k> :NERDTreeToggle<CR>
- let g:NERDTreeDirArrowExpandable = '▸'
- let g:NERDTreeDirArrowCollapsible = '▾'
+ let g:NERDTreeDirArrowExpandable = '?'
+ let g:NERDTreeDirArrowCollapsible = '?'
  "autocmd vimenter * NERDTree
  
  let g:prettier#exec_cmd_path = "~/.vim/plugged/vim-prettier/node_mod    ules/.bin/prettier"
@@ -78,8 +80,9 @@ let g:UltiSnipsUsePythonVersion = 3
  " set background=dark
  nmap cll yiwocll<Esc>p
 
- "imap ii <Esc>
+ imap ii <Esc>
  let g:user_emmet_leader_key='<C-L>'
+ imap uu <C-L>,
 
  " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
@@ -95,3 +98,4 @@ let g:ctrlp_custom_ignore = {
  "
  "
  nnoremap <Leader><space> :noh<cr>
+
