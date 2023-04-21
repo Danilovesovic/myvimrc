@@ -14,10 +14,12 @@ set noswapfile
 set nobackup
 set incsearch
 set cmdheight=2
+set splitbelow
 " Give more space for displaying messages.
 set cmdheight=2
 set updatetime=50
 set shortmess+=c
+set belloff=all
 "set colorcolumn=80
 noremap <Leader>y "*y
 noremap <Leader>p "*p
@@ -57,11 +59,11 @@ let g:UltiSnipsUsePythonVersion = 3
  " make vertsplit invisible
  let g:equinusocio_material_hide_vertsplit = 1
  set termguicolors
- colorscheme equinusocio_material
+ colorscheme PaperColor
 " colorscheme gruvbox
  let g:floaterm_keymap_new    = '<Home>'
-  let g:floaterm_keymap_kill   = '<End>'
-  hi FloatermBorder guibg=orange guifg=cyan
+  let g:floaterm_keymap_toggle   = '<End>'
+  hi FloatermBorder guibg=black guifg=cyan
 
 
  map <C-k> :NERDTreeToggle<CR>
@@ -97,5 +99,10 @@ let g:ctrlp_custom_ignore = {
  "set cmdheight=1
  "
  "
+:nmap <c-s> :w<CR>
+:imap <c-s> <Esc>:w<CR>a
  nnoremap <Leader><space> :noh<cr>
+
+
+
 
