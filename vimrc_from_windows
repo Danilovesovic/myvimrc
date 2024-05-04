@@ -15,6 +15,8 @@ set nobackup
 set incsearch
 set cmdheight=2
 set splitbelow
+" auto generate ctags
+autocmd BufWritePost *.js,*.php silent! !ctags . &
 " Give more space for displaying messages.
 set cmdheight=2
 set updatetime=50
@@ -24,9 +26,15 @@ set belloff=all
 noremap <Leader>y "*y
 noremap <Leader>p "*p
 highlight ColorColumn ctermbg=0 guibg=lightgray
-let  &pythonthreedll = 'C:\Users\vesov\AppData\Local\Programs\Python\Python37\python37.dll'
-let g:UltiSnipsUsePythonVersion = 3
- set relativenumber
+"let  &pythonthreedll = 'C:\Users\vesov\AppData\Local\Programs\Python\Python37\python37.dll'
+"let g:UltiSnipsUsePythonVersion = 3
+"set pythonhome=C:\randomplace\python
+"set pythondll=C:\randomplace\python\python27.dll
+" Set ultisnips triggers
+let g:UltiSnipsExpandTrigger="<tab>"                                            
+let g:UltiSnipsJumpForwardTrigger="<tab>"                                       
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+set relativenumber
  set hlsearch
   call plug#begin()
   Plug 'mattn/emmet-vim'
@@ -42,10 +50,11 @@ let g:UltiSnipsUsePythonVersion = 3
   Plug 'https://github.com/tyrannicaltoucan/vim-deep-space'
   Plug 'https://github.com/jiangmiao/auto-pairs'
   Plug 'https://github.com/kien/ctrlp.vim'
- " Plug 'SirVer/ultisnips'
+  Plug 'SirVer/ultisnips'
   Plug 'voldikss/vim-floaterm'
   Plug 'tpope/vim-fugitive'
   Plug 'mileszs/ack.vim'
+  Plug 'justinmk/vim-sneak'
   Plug 'preservim/nerdcommenter'
   Plug 'airblade/vim-gitgutter'
   Plug 'itchyny/lightline.vim'
@@ -54,12 +63,15 @@ let g:UltiSnipsUsePythonVersion = 3
   Plug 'scrooloose/nerdcommenter'
   Plug 'chuling/vim-equinusocio-material'
   Plug 'preservim/nerdtree'
+  Plug 'nikvdp/ejs-syntax'
+  Plug 'tomasiser/vim-code-dark'
+  Plug 'dyng/ctrlsf.vim'
  call plug#end()
  
  " make vertsplit invisible
  let g:equinusocio_material_hide_vertsplit = 1
  set termguicolors
- colorscheme PaperColor
+ colorscheme codedark
 " colorscheme gruvbox
  let g:floaterm_keymap_new    = '<Home>'
   let g:floaterm_keymap_toggle   = '<End>'
@@ -67,10 +79,15 @@ let g:UltiSnipsUsePythonVersion = 3
 
 
  map <C-k> :NERDTreeToggle<CR>
- let g:NERDTreeDirArrowExpandable = '?'
- let g:NERDTreeDirArrowCollapsible = '?'
+ let g:NERDTreeDirArrowExpandable = '+'
+ let g:NERDTreeDirArrowCollapsible = '-'
  "autocmd vimenter * NERDTree
- 
+ "
+ "
+ "CTRLSF
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+
  let g:prettier#exec_cmd_path = "~/.vim/plugged/vim-prettier/node_mod    ules/.bin/prettier"
     imap jj <Esc> 
  " Console log from insert mode; Puts focus inside parentheses
@@ -102,7 +119,3 @@ let g:ctrlp_custom_ignore = {
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>a
  nnoremap <Leader><space> :noh<cr>
-
-
-
-
